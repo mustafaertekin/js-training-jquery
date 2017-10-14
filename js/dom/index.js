@@ -16,7 +16,8 @@ function changeHeadingToTheBestCollection() {
 }
 //'should make the hr (.line) element bolder'
 function makeHrLineElementBolder() {
-    $('.line').css('border-width', '2px');
+    let currentWidth = parseFloat($('hr.line').first().css('border-width'));
+    $('hr.line').css('border-width', `${currentWidth+1}px`);
 }
 //'should change the background of each product title with a different color'
 function changeBackgroundColorOfEachProductTitleWithDifferentColor() {
