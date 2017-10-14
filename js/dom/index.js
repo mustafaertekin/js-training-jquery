@@ -89,8 +89,9 @@ function showTheBuyItemAgainWithAGreenBackgroundGrayBorderAndThinShadow() {
 }
 // 'should add an event handler to the "BUY ITEM" buttons and after a click it should show an alert'
 function addAnEventHandlerToTheBuyItemButtonsAndAfterClickShowAlert() {
-    $(".btn").on("click", function(){
+    $(".btn").on("click", function(e){
         alert("This is an alert");
+        e.preventDefault();
     })
 }
 // 'should bring back the initial image again, instead of "http://bit.ly/2xq8ev0"'
