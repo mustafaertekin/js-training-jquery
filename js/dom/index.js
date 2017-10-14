@@ -65,11 +65,8 @@ function changeTheTitleNameWithARandomName() {
 }
 //'should color the stars of the third product with green'
 function colorTheStarsOfTheThirdProductWithGreen() {
-    $(".container.col-md-3,.col-sm-6:nth-child(3)").addClass("thirdProduct");
+    $(".container.col-md-3,.col-sm-6:nth-child(3)").css("color", "green");
 
-    /*While the first and second products have a predefined class "firstProduct","secondProduct", the third product has not such a class. So first of all we have added "thirdProduct" class.*/
-
-    $(".thirdProduct .ratings").children("span").css("color", "green");
 }
 //'should reset the last two images to the url "http://bit.ly/2xq8ev0"'
 function resetLastTwoImagesToUrl() {
@@ -79,7 +76,11 @@ function resetLastTwoImagesToUrl() {
 }
 //'should constantly change the price (#changingPrice), increment it by one in each 3 secs.'
 function constantlyChangeThePriceAndIncrementItByOneInEachThreeSeconds() {
-
+    setInterval(function(){
+        let price = $('#changingPrice').text();
+        price = +price.replace('$','');
+        $('#changingPrice').text(`$${price+1}`);
+    },3000);
 }
 //'should show the "BUY ITEM" again with a green background, gray border and a thin shadow'
 function showTheBuyItemAgainWithAGreenBackgroundGrayBorderAndThinShadow() {
