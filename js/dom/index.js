@@ -33,11 +33,7 @@ function removeBuyItemButtons() {
 }
 //'should remove the last three item from the view'
 function removeLastThreeItemsFromView() {
-    var itemNr = $('.thumbnail').length;
-    for (let i = 0; i < 3; i++) {
-        $('.thumbnail').parent().addClass('item');
-        $('.item').last().remove();
-    }
+  $('.row .col-md-3.col-sm-6:nth-of-type(n+6)').remove();
 }
 //'should make 10% reduction on all products'
 function makeTenPercentPriceReductionOnAllProducts() {
@@ -50,14 +46,13 @@ function makeTenPercentPriceReductionOnAllProducts() {
     });
 }
 
-//'should rename the first product shirt to "Fish-Shirt"'
+//'should rename the product shirt to "Fish-Shirt"'
 function renameTheProductShirtToFishShirt() {
-    $("h4:contains('Product Tittle')").first().text('Fish-Shirt');
+    $('.row .col-md-3.col-sm-6:nth-of-type(4n+1) h4').text('Fish-Shirt');
 }
 //'should rename the first rock item to "Bird-Rock"'
 function renameTheFirstRockItemToBirdRock() {
-    $("h4:contains('Product Tittle')").first().text('Bird-Rock');
-    // Depending on the previous function it works..
+    $('.row .col-md-3.col-sm-6:nth-of-type(2) h4').text('Bird-Rock');
 }
 //'should add 5 stars to the product shirt'
 function addFiveStarsToTheProductShirt() {
